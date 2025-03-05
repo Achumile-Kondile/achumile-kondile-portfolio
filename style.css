@@ -148,10 +148,16 @@ body {
     background: #8F37B1;
     color: #fff;
     text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-  }
-  
+    display: flex;
+    justify-content: center; /* Centers text horizontally */
+    align-items: center; /* Centers text vertically */
+    height: 20px; /* Fixed height */
+    padding: 0; /* No padding */
+    font-size: 0.2rem; /* Smaller font size */
+    line-height: 1; /* Normal line height */
+}
+
+
   /* Animations */
   @keyframes fadeIn {
     from {

@@ -10,41 +10,65 @@
 </head>
 <body class="light-mode">
   <nav>
-    <ul>
-      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-      <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
-      <li><a href="education.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
-      <li><a href="skills.html"><i class="fas fa-code"></i> Skills</a></li>
-      <li><a href="experience.html"><i class="fas fa-briefcase"></i> Experience</a></li>
-      <li><a href="projects.html"><i class="fas fa-project-diagram"></i> Projects</a></li>
-      <li><a href="certifications.html"><i class="fas fa-certificate"></i> Certifications</a></li>
-      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-      <li>
-        <button id="theme-toggle">
-          <i class="fas fa-moon"></i> <!-- Default: Dark Mode Icon -->
-        </button>
-      </li>
-    </ul>
+    <div class="nav-container">
+      <div class="menu-toggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="about.html"><i class="fas fa-user"></i> About</a></li>
+        <li><a href="education.html"><i class="fas fa-graduation-cap"></i> Education</a></li>
+        <li><a href="skills.html"><i class="fas fa-code"></i> Skills</a></li>
+        <li><a href="experience.html"><i class="fas fa-briefcase"></i> Experience</a></li>
+        <li><a href="projects.html"><i class="fas fa-project-diagram"></i> Projects</a></li>
+        <li><a href="certifications.html"><i class="fas fa-certificate"></i> Certifications</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+        <li class="theme-toggle-mobile">
+          <button id="theme-toggle">
+            <i class="fas fa-moon"></i>
+          </button>
+        </li>
+      </ul>
+    </div>
   </nav>
 
-  <section id="home" class="fade-in">
-    <div class="home-content">
-      <div class="profile-pic-container">
-        <img src="assets/Chumi.png" alt="Achumile Kondile" class="profile-pic">
+  <main>
+    <section id="home" class="fade-in">
+      <div class="home-content">
+        <div class="profile-pic-container">
+          <img src="assets/Chumi.png" alt="Achumile Kondile" class="profile-pic">
+        </div>
+        <h1>Hi, I'm Achumile Kondile</h1>
+        <p>A passionate Software Developer with a love for building user-friendly applications.</p>
+        <div class="buttons">
+          <a href="contact.html" class="btn bounce">Get in Touch</a>
+          <a href="assets/Miss Kondile Resume.pdf" download class="btn bounce">Download Resume</a>
+        </div>
       </div>
-      <h1>Hi, I'm Achumile Kondile</h1>
-      <p>A passionate Software Developer with a love for building user-friendly applications.</p>
-      <div class="buttons">
-        <a href="contact.html" class="btn bounce">Get in Touch</a>
-        <a href="assets/Miss Kondile Resume.pdf" download class="btn bounce">Download Resume</a>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2023 Achumile Kondile. All rights reserved.</p>
   </footer>
 
+  <script>
+    // Mobile Menu Toggle
+    document.getElementById('mobile-menu').addEventListener('click', function() {
+      document.querySelector('.nav-menu').classList.toggle('active');
+      this.classList.toggle('active');
+    });
+
+    // Close mobile menu when a link is clicked
+    document.querySelectorAll('.nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.nav-menu').classList.remove('active');
+        document.getElementById('mobile-menu').classList.remove('active');
+      });
+    });
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
